@@ -15,16 +15,12 @@ import java.util.List;
 public class RazenflixApplication {
 
 	private final FilmeRepository repository;
-
-	public RazenflixApplication(FilmeRepository repository){
-		this.repository = repository;
-	}
-
 	private final SerieRepository repositoryS;
 
-	public RazenflixApplication(SerieRepository repositoryS){
-		this.repositoryS = repositoryS;
-	}
+	public RazenflixApplication(FilmeRepository repository, SerieRepository repositoryS){
+		this.repository = repository;
+        this.repositoryS = repositoryS;
+    }
 
 	public static void main(String[] args) {
 		SpringApplication.run(RazenflixApplication.class, args);

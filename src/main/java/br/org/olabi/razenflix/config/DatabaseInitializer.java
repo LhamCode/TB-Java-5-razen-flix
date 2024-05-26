@@ -9,7 +9,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Configuration
 public class DatabaseInitializer implements CommandLineRunner {
@@ -40,15 +42,15 @@ public class DatabaseInitializer implements CommandLineRunner {
     private final SerieRepository serieRepository;
 
     public static final List<Serie> series = List.of(
-
-    );
+            new Serie("Game of Thrones", "8", Arrays.stream("Action, Adventure, Drama, Fantasy, Romance".split(",\\s*")).collect(Collectors.toList()), Arrays.stream("David Benioff, D.B. Weiss".split(",\\s*")).collect(Collectors.toList()), "https://m.media-amazon.com/images/M/MV5BYTRiNDQwYzAtMzVlZS00NTI5LWJjYjUtMzkwNTUzMWMxZTllXkEyXkFqcGdeQXVyNDIzMzcwNjc@._V1_SX300.jpg", Arrays.stream("Peter Dinklage, Lena Headey, Emilia Clarke, Kit Harington".split(",\\s*")).collect(Collectors.toList()), new Serie.Ratings("9.3" ,"1679892"))
+            );
 
     @Override
 
     public void run(String... args) throws Exception {
         log.info("Alô pepe moreno? o banco ta conectado");
         filmeRepository.saveAll(filmes);
-        filmeRepository.findAll().forEach(filme -> System.out.println(filmes));
+        filmeRepository.findAll().forEach(filme -> System.out.println(filme));
         serieRepository.saveAll(series);
         serieRepository.findAll().forEach(serie -> System.out.println(series));
     }

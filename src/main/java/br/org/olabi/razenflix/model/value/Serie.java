@@ -29,8 +29,7 @@ public class Serie {
     @Embedded
     private Ratings ratings;
 
-    public Serie(UUID id, String title, String totalSeasons, List<String> genre, List<String> writers, String poster, List<String> actors, Ratings ratings) {
-        this.id = id;
+    public Serie(String title, String totalSeasons, List<String> genre, List<String> writers, String poster, List<String> actors, Ratings ratings) {
         this.title = title;
         this.totalSeasons = totalSeasons;
         this.genre = genre;
@@ -109,6 +108,14 @@ public class Serie {
         private String rating;
         private String likes;
 
+        // Constructors
+        public Ratings() {}
+
+        public Ratings(String rating, String likes) {
+            this.rating = rating;
+            this.likes = likes;
+        }
+
         // Getters and Setters
 
         public String getRating() {
@@ -129,4 +136,18 @@ public class Serie {
     }
 
     protected Serie(){}
+
+    @Override
+    public String toString() {
+        return "Serie{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", totalSeasons='" + totalSeasons + '\'' +
+                ", genre='" + genre + '\'' +
+                ", writers='" + writers + '\'' +
+                ", poster='" + poster + '\'' +
+                ", actors='" + actors + '\'' +
+                ", ratings='" + ratings + '\'' +
+                '}';
+    }
 }

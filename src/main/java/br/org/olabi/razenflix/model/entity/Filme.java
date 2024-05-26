@@ -13,42 +13,47 @@ public class Filme {
     @Id
     @UuidGenerator
    private UUID id;
-   private String Title;
-   private String Year;
-   private String Rated;
-   private String Released;
-   private String Runtime;
-   private String Genre;
-   private String Director;
-   private String Writer;
-   private String Actors;
-   private String Plot;
-   private String Language;
-   private String Country;
-   private String Awards;
+    private String title;
 
-    public Filme(String title, String year, String released, String rated, String runtime, String genre, String director, String writer, String actors, String plot, String language, String country, String awards) {
-        Title = title;
-        Year = year;
-        Released = released;
-        Rated = rated;
-        Runtime = runtime;
-        Genre = genre;
-        Director = director;
-        Writer = writer;
-        Actors = actors;
-        Plot = plot;
-        Language = language;
-        Country = country;
-        Awards = awards;
-    }
+    private String releaseYear;
 
-    public String getTitle() {
-        return Title;
-    }
+    private String rated;
 
-    public void setTitle(String title) {
-        Title = title;
+    private String released;
+
+    private String runtime;
+
+    private String genre;
+
+    private String director;
+
+    private String writer;
+
+    private String actors;
+
+    private String plot;
+
+    private String language;
+
+    private String country;
+
+    private String awards;
+
+
+    public Filme(String title, String releaseYear, String rated, String released, String runtime, String genre, String director, String writer, String actors, String plot, String language, String country, String awards) {
+        this.title = title;
+        this.releaseYear = releaseYear;
+        this.rated = rated;
+        this.released = released;
+        this.runtime = runtime;
+        this.genre = genre;
+        this.director = director;
+        this.writer = writer;
+        this.actors = actors;
+        this.plot = plot;
+        this.language = language;
+        this.country = country;
+        this.awards = awards;
     }
 
     public UUID getId() {
@@ -59,102 +64,129 @@ public class Filme {
         this.id = id;
     }
 
-    public String getYear() {
-        return Year;
+    public String getTitle() {
+        return title;
     }
 
-    public void setYear(String year) {
-        Year = year;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getReleaseYear() {
+        return releaseYear;
+    }
+
+    public void setReleaseYear(String releaseYear) {
+        this.releaseYear = releaseYear;
     }
 
     public String getRated() {
-        return Rated;
+        return rated;
     }
 
     public void setRated(String rated) {
-        Rated = rated;
+        this.rated = rated;
     }
 
     public String getReleased() {
-        return Released;
+        return released;
     }
 
     public void setReleased(String released) {
-        Released = released;
+        this.released = released;
     }
 
     public String getRuntime() {
-        return Runtime;
+        return runtime;
     }
 
     public void setRuntime(String runtime) {
-        Runtime = runtime;
+        this.runtime = runtime;
     }
 
     public String getGenre() {
-        return Genre;
+        return genre;
     }
 
     public void setGenre(String genre) {
-        Genre = genre;
+        this.genre = genre;
     }
 
     public String getDirector() {
-        return Director;
+        return director;
     }
 
     public void setDirector(String director) {
-        Director = director;
+        this.director = director;
     }
 
     public String getWriter() {
-        return Writer;
+        return writer;
     }
 
     public void setWriter(String writer) {
-        Writer = writer;
+        this.writer = writer;
     }
 
     public String getActors() {
-        return Actors;
+        return actors;
     }
 
     public void setActors(String actors) {
-        Actors = actors;
+        this.actors = actors;
     }
 
     public String getPlot() {
-        return Plot;
+        return plot;
     }
 
     public void setPlot(String plot) {
-        Plot = plot;
+        this.plot = plot;
     }
 
     public String getLanguage() {
-        return Language;
+        return language;
     }
 
     public void setLanguage(String language) {
-        Language = language;
+        this.language = language;
     }
 
     public String getCountry() {
-        return Country;
+        return country;
     }
 
     public void setCountry(String country) {
-        Country = country;
+        this.country = country;
     }
 
     public String getAwards() {
-        return Awards;
+        return awards;
     }
 
     public void setAwards(String awards) {
-        Awards = awards;
+        this.awards = awards;
     }
 
     protected Filme(){}
 
+    @Override
+    public String toString() {
+        return "Filme{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", releaseYear='" + releaseYear + '\'' +
+                ", rated='" + rated + '\'' +
+                ", released='" + released + '\'' +
+                ", runtime='" + runtime + '\'' +
+                ", genre='" + genre + '\'' +
+                ", director='" + director + '\'' +
+                ", writer='" + writer + '\'' +
+                ", actors='" + actors + '\'' +
+                ", plot='" + plot + '\'' +
+                ", language='" + language + '\'' +
+                ", country='" + country + '\'' +
+                ", awards='" + awards + '\'' +
+                '}';
+    }
 }

@@ -1,6 +1,6 @@
 package br.org.olabi.razenflix.repository;
 
-import br.org.olabi.razenflix.model.value.Serie;
+import br.org.olabi.razenflix.model.entity.Serie;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

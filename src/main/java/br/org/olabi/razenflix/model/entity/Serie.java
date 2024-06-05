@@ -120,4 +120,5 @@ public class Serie {
                 ", ratings='" + ratings + '\'' +
                 '}';
     }
+
 }
